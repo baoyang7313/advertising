@@ -1,0 +1,19 @@
+.by-content-line{margin-bottom:15px}
+.by-content-line p{
+    width:30%;
+    height:40px;
+    line-height:40px;
+    border-radius: 6px;background-color: #fff;
+    text-align: center;
+    float:left;
+    margin-right:5%;
+    font-size:18px;
+}
+
+.by-content-rt p{
+    width: 50%;
+    height:40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 6px;
+}

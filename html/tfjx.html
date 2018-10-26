@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>投放进行</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tfjx.css">
+
+</head>
+
+<body>
+    <div class="by-content">
+        <div class="by-content-line clearfix" style="margin-top:200px">
+            <p style="margin-left:5%;">曝光量</p>
+            <div class="by-content-rt">
+                <p id="by-bgl">0</p>
+            </div>
+        </div>
+        <div class="by-content-line clearfix">
+            <p style="margin-left:5%;">时间</p>
+            <div class="by-content-rt">
+                <p id="by-date">还剩 30 分 00 秒</p>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery.min.js"></script>
+    <script>
+        function byNum() {
+            var num = 0;
+            var t = setInterval(function () {
+                num+=277;
+                var span1 = document.getElementById("by-bgl");
+                span1.innerText = num;
+                if (num >= 500000) {
+                    clearInterval(t);
+                    span1.innerText = 500000;
+                }
+            }, 1000);
+            var minute = 29;
+            var second = 60;
+            var time= null;
+            //时间
+            time = setInterval(function () {
+                second--;
+                if (second == 00 && minute == 00) {
+                    var span1 = document.getElementById("by-bgl");
+                    clearInterval(t);
+                    span1.innerText = 500000;
+                    clearInterval(time);
+                   setTimeout(function(){window.location.href="ggxq.html";},3000)
+                }else if (second == 00) {
+                    second = 60;
+                    minute--;
+                    if (minute < 10) minute = "0" + minute;
+                    
+                }; //当秒钟为00时，秒数重新给值
+                if (second < 10) second = "0" + second;
+                $("#by-date").text("还剩"+minute+":分钟"+second+'秒');
+                
+               
+            }, 1000);
+        }
+        byNum();
+
+       
+    </script>
+</body>
+
+</html>

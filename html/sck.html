@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>广告素材库</title>
+    <link rel="stylesheet" href="../css/sck.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .by-content p {
+            width: 150px;
+            height: 40px;
+            line-height: 40px;
+            background-color: #fff;
+            text-align: center;
+            float: left;
+            margin-left: 100px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="by-content">
+        <div class="by-top">
+            <a id="by-txt">文字</a>
+            <a id="by-h5">H5页面</a>
+            <a id="by-video">视频</a>
+        </div>
+        <div class="by-bottom-box">
+            <textarea name="" id="by-bottom-txt" cols="30" rows="10"></textarea>
+            <div id="by-bottom-img">
+                    <img src="../img/003.jpg" alt="">
+            </div>
+            <video  id="by-bottom-video" autoplay controls>
+                <source src="">
+            </video>
+        </div>
+    </div>
+</body>
+<script src="../js/jquery.min.js"></script>
+<script>
+    $('.by-top').on('click','a',function(){
+        $(this).css({'background-color':'#f5ba4c','color':'#fff'}).siblings('a').css({'background-color':'#fff','color':'#000'});
+    })
+    $(function(){
+        $("#by-txt").css({'background-color':'#f5ba4c','color':'#fff'});
+        $("#by-bottom-txt").css("display","block");
+        $("#by-bottom-img").css("display","none");
+        $("#by-bottom-video").css("display","none");
+    })
+    $('#by-txt').click(function(){
+        $("#by-bottom-txt").css("display","block");
+        $("#by-bottom-img").css("display","none");
+        $("#by-bottom-video").css("display","none");
+    })
+    $('#by-video').click(function(){
+        $("#by-bottom-txt").css("display","none");
+        $("#by-bottom-img").css("display","none");
+        $("#by-bottom-video").css("display","block");
+    })
+    $('#by-h5').click(function(){
+        $("#by-bottom-txt").css("display","none");
+        $("#by-bottom-img").css("display","block");
+        $("#by-bottom-video").css("display","none");
+    })
+</script>
+</html>

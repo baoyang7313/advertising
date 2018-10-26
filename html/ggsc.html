@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>广告上传</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/ggsc.css">
+</head>
+
+<body>
+    <div class="by-content">
+        <div class="by-box">
+            <p>文字</p>
+            <textarea name="" cols="" rows="5" placeholder="不超过100字" id="by-textarea"></textarea>
+            <a href="javascript:void(0)" onclick="byTextarea()">确认提交</a>
+        </div>
+        <div class="by-box">
+            <p>H5页面</p>
+            <div class="by-input-content">
+                <input type="text" name="" class="by-input-box" />
+                <input type="file" name="1" value="" class="by-input-file" id="by-input-file1" style="display:none;"  />
+                <input type="button" value="浏览..." class="by-input-btn" id="by-input-btn1">
+            </div>
+            <a href="javascript:void(0)" onclick="alert('上传成功')">确认上传 </a>
+        </div>
+        <div class="by-box">
+            <p>视频</p>
+            <div class="by-input-content">
+                <input type="text" name="" class="by-input-box" />
+                <input type="file" name=""  value="" class="by-input-file" style="display:none;" id="by-input-file2" />
+                <input type="button" value="浏览..." class="by-input-btn" id="by-input-btn2">
+            </div>
+            <a href="javascript:void(0)" onclick="alert('上传成功')">确认上传</a>
+
+        </div>
+    </div>
+    <script src="../js/jquery.min.js"></script>
+    <script>
+
+        function byTextarea() {
+            var name = document.getElementById('by-textarea').value;
+            if (name == "") {
+                window.alert('提交成功');
+            } else {
+                document.getElementById('by-textarea').value = "";
+                setTimeout(function () { window.alert('提交成功'); }, 200)
+            }
+        }
+        $('#by-input-btn1').click(function () {
+            $(this).prev('.by-input-file').trigger('click');
+           
+
+        })
+        $('#by-input-file1').change(function(){
+            var myfile = document.getElementById('by-input-file1');
+                console.log(myfile.value);
+                $(this).prev().val(myfile.value);
+        })
+        $('#by-input-btn2').click(function () {
+            $(this).prev('.by-input-file').trigger('click');
+           
+
+        })
+        $('#by-input-file2').change(function(){
+            var myfile = document.getElementById('by-input-file2');
+                console.log(myfile.value);
+                $(this).prev().val(myfile.value);
+        })
+        // $('#by-input-btn2').click(function () {
+        //     $(this).prev('.by-input-file').trigger('click');
+        //     var myfile = document.getElementById('by-input-file2');
+        //     console.log(myfile.files[0].name);
+        //     $(this).prev('.by-input-file').prev().val(myfile.files.name);
+        // })
+
+    </script>
+</body>
+
+</html>
